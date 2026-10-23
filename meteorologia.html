@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de vigilancia atmosférica y telemetría de AeroControl: mapas interactivos, timeline de alertas y desgloses desplegables.">
+    <title>AeroControl - Monitor Meteorológico</title>
+    <link rel="icon" type="image/png" href="imagenes/icono.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <div class="top-bar">
+            <nav class="menu-transparente">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="vuelos.html">Vuelos</a></li>
+                    <li><a href="incidencias.html">Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="cabecera-contenido">
+            <div class="bloque-titulo">
+                <img src="imagenes/icono.png" alt="AeroControl Logo" class="logo-titulo">
+                <h1 class="titulo-estrecho">AeroControl</h1>
+            </div>
+            <p>Gestiona el tráfico aéreo, consulta información en tiempo real y controla las operaciones desde nuestra plataforma web.</p>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal">
+
+    
+        <section class="seccion-portada">
+            <h2>Vigilancia Atmosférica y Capas Climáticas</h2>
+            <hr class="titulo-separador">
+            <p class="subtitulo-portada">
+                Monitorización en tiempo real del área de control terminal (TMA). Análisis de capas de satélite, registros cronológicos de avisos y desglose técnico desplegable.
+            </p>
+        </section>
+
+        
+        <section class="galeria-capas-seccion">
+            <h2>Capas de Observación en Tiempo Real</h2>
+            <p class="sub-texto">Selecciona las fuentes de imagen telegráfica para evaluar las condiciones de vuelo.</p>
+            
+            <div class="cuadro-meteo">
+                
+                <!-- Tarjeta Imagen 1 -->
+                <div class="tarjeta-capa">
+                    <div class="capa-header">
+                        <span class="badge-live">EN VIVO</span>
+                        <h3>Radar Doppler Precipitaciones</h3>
+                    </div>
+                    <div class="contenedor-img-capa">
+                        <img src="imagenes/doppler.jpg" alt="Radar Doppler de reflectividad y lluvia">
+                    </div>
+                    <div class="capa-footer">
+                        <p><strong>Resolución:</strong> Banda C (50 NM)</p>
+                        <p>Ecos de precipitación moderada en el sector Este.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Imagen 2 -->
+                <div class="tarjeta-capa">
+                    <div class="capa-header">
+                        <span class="badge-live">SATÉLITE</span>
+                        <h3>Cobertura Nubosa IR</h3>
+                    </div>
+                    <div class="contenedor-img-capa">
+                        <img src="imagenes/nubes.jpg" alt="Mapa de satélite infrarrojo de nubes">
+                    </div>
+                    <div class="capa-footer">
+                        <p><strong>Techo de nubes:</strong> 3.000 ft - 5.000 ft</p>
+                        <p>Estratos bajos en fase de disipación gradual.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Desplegables-->
+        <section class="seccion-desplegables">
+            <h2>Boletines Oficiales por Sectores (METAR / TAF)</h2>
+            <p class="sub-texto">Haz clic en cada sector para desplegar la información codificada y su interpretación operativa.</p>
+
+            <!-- Desplegable 1 -->
+            <details class="acordeon-meteo" open>
+                <summary class="acordeon-header">
+                    <span class="acordeon-titulo">📍 Sector LEMD - Madrid/Barajas (Aeropuerto Principal)</span>
+                    <span class="acordeon-estado ok">Condiciones VMC</span>
+                </summary>
+                <div class="acordeon-contenido">
+                    <div class="bloque-codigo">
+                        <code>METAR LEMD 241530Z 24018G28KT 210V270 9999 FEW030 SCT050 16/09 Q1014 NOSIG</code>
+                    </div>
+                    <p><strong>Análisis técnico:</strong> Viento medio del 240° a 18 nudos con rachas de 28 nudos. Visibilidad excelente (más de 10 km). Escasas nubes a 3.000 ft, dispersas a 5.000 ft. Presión QNH de 1014 hPa.</p>
+                </div>
+            </details>
+
+            <!-- Desplegable 2 -->
+            <details class="acordeon-meteo">
+                <summary class="acordeon-header">
+                    <span class="acordeon-titulo">📍 Sector LEBL - Barcelona/El Prat (Sector Costa)</span>
+                    <span class="acordeon-estado alerta">Cizalladura en Aproximación</span>
+                </summary>
+                <div class="acordeon-contenido">
+                    <div class="bloque-codigo">
+                        <code>METAR LEBL 241530Z 09012KT 8000 +SHRA SCT015 BKN030 14/12 Q1010 WS RWY24L</code>
+                    </div>
+                    <p><strong>Análisis técnico:</strong> Viento del Este (090°) a 12 kt. Chubascos fuertes con visibilidad reducida a 8 km. Cizalladura de viento (<em>windshear</em>) notificada en la cabecera de la pista 24L.</p>
+                </div>
+            </details>
+
+            <!-- Desplegable 3 -->
+            <details class="acordeon-meteo">
+                <summary class="acordeon-header">
+                    <span class="acordeon-titulo">📍 Pronóstico TAF de Área (Validez 24 horas)</span>
+                    <span class="acordeon-estado info">Pronóstico Operativo</span>
+                </summary>
+                <div class="acordeon-contenido">
+                    <div class="bloque-codigo">
+                        <code>TAF LEMD 241100Z 2412/2518 23015KT 9999 SCT040 TX18/2415Z TN08/2506Z BECMG 2420/2422 18008KT</code>
+                    </div>
+                    <p><strong>Análisis técnico:</strong> Tendencia a la estabilización durante la noche. Reducción de la intensidad de viento a 8 nudos con cambio de dirección hacia el Sur (180°).</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- Historial alertas-->
+        <section class="seccion-timeline">
+            <h2>Historial de Avisos y Fenómenos Significativos (SIGMET)</h2>
+            <p class="sub-texto">Secuencia cronológica de las incidencias atmosféricas registradas durante la jornada.</p>
+
+            <div class="timeline-container">
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker.rojo"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-fecha">14:15 UTC — Aviso SIGMET #03</span>
+                        <h3>Detección de Cizalladura (Windshear)</h3>
+                        <p>Notificada por tripulación en aproximación final a RWY 13L entre los 500 y 1.000 pies de altitud.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker.amarillo"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-fecha">12:30 UTC — Actualización AWOS</span>
+                        <h3>Incremento del Viento Cruzado</h3>
+                        <p>Ráfagas superiores a 25 kt procedentes del sector 240°. Se recomienda procedimiento de viento fuerte.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker.verde"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-fecha">09:00 UTC — Apertura Operativa</span>
+                        <h3>Disipación de Niebla Matinal</h3>
+                        <p>Paso automático de operaciones de baja visibilidad (LVP) a régimen de vuelo visual estándar.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Banner Estado Red -->
+        <div class="banner-sistema" style="margin-top: 35px;">
+            <div class="estado-indicador">
+                <span class="dot-verde"></span>
+                <span>Red de Sensores AWOS: <strong>Recepción de telemetría y datos satelitales activa</strong></span>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            
+            <!-- Columna 1 -->
+            <div class="columna-footer info-marca">
+                <div class="logo-footer">
+                    <span class="icono-aereo">✈</span>
+                    <h3>Control Aéreo</h3>
+                </div>
+                <p>Plataforma centralizada para la supervisión del espacio aéreo, coordinación de pistas y consulta meteorológica operativa en tiempo real.</p>
+            </div>
+    
+            <!-- Columna 2 -->
+            <div class="columna-footer">
+                <h4>Módulos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio / Dashboard</a></li>
+                    <li><a href="vuelos.html">Gestión de Vuelos</a></li>
+                    <li><a href="incidencias.html">Control de Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología METAR</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 3 -->
+            <div class="columna-footer">
+                <h4>Recursos Operativos</h4>
+                <ul>
+                    <li><a href="https://www.aena.es/" target="_blank" rel="noopener">Portal Oficial AENA</a></li>
+                    <li><a href="https://www.icao.int/" target="_blank" rel="noopener">Normativa ICAO</a></li>
+                    <li><a href="https://www.enaire.es/" target="_blank" rel="noopener">Información ENAIRE</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 4 -->
+            <div class="columna-footer">
+                <h4>Centro de Control</h4>
+                <p class="detalle-contacto"><strong>Teléfono Emergencias:</strong> +34 910 000 000</p>
+                <p class="detalle-contacto"><strong>Frecuencia VHF:</strong> 118.100 MHz</p>
+                <p class="detalle-contacto"><strong>Ubicación:</strong> Torre de Control Principal</p>
+            </div>
+    
+        </div>
+    
+        <!-- Barra Inferior -->
+        <div class="footer-bottom">
+            <div class="contenedor-bottom">
+                <p>&copy; 2026 Sistema de Gestión de Tráfico Aéreo. Todos los derechos reservados.</p>
+
+                <p>
+                    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                             src="https://jigsaw.w3.org/css-validator/images/vcss"
+                             alt="¡CSS Válido!">
+                    </a>
+                </p>
+
+                <div class="legales">
+                    <a href="#">Aviso Legal</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Accesibilidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestión y monitorización de tráfico aéreo en tiempo real.">
+    <title>AeroControl - Sistema de Vuelos</title>
+    <link rel="icon" type="image/png" href="imagenes/icono.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- CABECERA -->
+
+    <header>
+        <div class="top-bar">
+            <nav class="menu-transparente">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="vuelos.html">Vuelos</a></li>
+                    <li><a href="incidencias.html">Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="cabecera-contenido">
+            <div class="bloque-titulo">
+                <img src="imagenes/icono.png" alt="AeroControl Logo" class="logo-titulo">
+                <h1 class="titulo-estrecho">AeroControl</h1>
+            </div>
+            <p>Gestiona el tráfico aéreo, consulta información en tiempo real y controla las operaciones desde nuestra plataforma web.</p>
+        </div>
+    </header>
+
+
+    <!-- CONTENIDO MAIN -->
+
+    <main class="contenedor-principal">
+
+        <!-- 1. Encabezado de la Portada -->
+        <section class="seccion-portada">
+            <h2>Centro Operativo de Control Aéreo</h2>
+            <hr class="titulo-separador">
+            <p class="subtitulo-portada">Plataforma centralizada de supervisión operativa: monitorización del espacio aéreo, coordinación de pistas y gestión de incidencias en tiempo real.</p>
+        </section>
+    
+        <!-- 2. Módulos Principales de Navegación -->
+        <div class="accesos-modulos">
+    
+            <article class="card-acceso">
+                <div class="card-img-wrapper">
+                    <img src="imagenes/modulo1.jpg" alt="Gestión de Vuelos" class="card-img">
+                    <span class="card-badge">Módulo 01</span>
+                </div>
+                <div class="card-body">
+                    <h3>Gestión de Vuelos</h3>
+                    <p>Monitoreo en tiempo real de salidas, llegadas, asignación de puertas de embarque y tiempos estimados de aterrizaje (ETA).</p>
+                    <a href="vuelos.html" class="btn-ir">Acceder al Módulo -></a>
+                </div>
+            </article>
+    
+            <article class="card-acceso">
+                <div class="card-img-wrapper">
+                    <img src="imagenes/modulo2.jpg" alt="Control de Incidencias" class="card-img">
+                    <span class="card-badge">Módulo 02</span>
+                </div>
+                <div class="card-body">
+                    <h3>Control de Incidencias</h3>
+                    <p>Registro y seguimiento técnico de mantenimientos en pista, balizamiento, trabajos en la calle de rodaje y alertas de seguridad.</p>
+                    <a href="incidencias.html" class="btn-ir">Acceder al Módulo -></a>
+                </div>
+            </article>
+    
+            <article class="card-acceso">
+                <div class="card-img-wrapper">
+                    <img src="imagenes/modulo3.jpg" alt="Meteorología" class="card-img">
+                    <span class="card-badge">Módulo 03</span>
+                </div>
+                <div class="card-body">
+                    <h3>Meteorología</h3>
+                    <p>Condiciones climáticas en el área de maniobras, velocidad del viento cruzado, visibilidad y reportes meteorológicos METAR/TAF.</p>
+                    <a href="meteorologia.html" class="btn-ir">Acceder al Módulo -></a>
+                </div>
+            </article>
+    
+        </div>
+    
+        <!-- 3. Indicadores Operativos en Tiempo Real (Métricas) -->
+        <div class="panel-metricas">
+            <div class="metrica-item">
+                <span class="metrica-valor">142</span>
+                <span class="metrica-etiqueta">Vuelos en Aire</span>
+            </div>
+            <div class="metrica-item">
+                <span class="metrica-valor">98.4%</span>
+                <span class="metrica-etiqueta">Puntualidad Global</span>
+            </div>
+            <div class="metrica-item">
+                <span class="metrica-valor">24 / 24</span>
+                <span class="metrica-etiqueta">Pistas Activas</span>
+            </div>
+            <div class="metrica-item">
+                <span class="metrica-valor alerta">2</span>
+                <span class="metrica-etiqueta">Avisos Activos</span>
+            </div>
+        </div>
+    
+        <!-- 4. Bloque radar -->
+        <section class="seccion-info-radar">
+            <div class="info-radar-texto">
+                <span class="tag-destacado">Sistema ADS-B & Radar Secundario</span>
+                <h3>¿Qué es la Monitorización del Espacio Aéreo?</h3>
+                <p>Esta plataforma integra las señales de los transceptores VHF y estaciones de radar del aeropuerto. Permite a los operadores mantener la separación de seguridad entre aeronaves, coordinar las secuencias de aproximación y optimizar el flujo de tráfico tanto en el aire como en la superficie.</p>
+                <div class="caracteristicas-list">
+                    <div class="caract-item">
+                        <strong>Cobertura Continua:</strong> Seguimiento satelital de posiciones GPS.
+                    </div>
+                    <div class="caract-item">
+                        <strong>Gestión de Pistas:</strong> Asignación automática de franjas horarias.
+                    </div>
+                </div>
+                <a href="vuelos.html" class="btn-destacado">Ver Plan de Vuelos Completo</a>
+            </div>
+        
+            <div class="info-radar-img">
+                <img src="imagenes/radarIndex.jpg" alt="Pantallas de Control Operativo" class="img-radar">
+            </div>
+        </section>
+    
+        <!-- 5. Bloque Informativo de Normativa y Procedimientos -->
+        <section class="bloque-normativa">
+            <div class="normativa-card">
+                <h4>Protocolo Operativo AENA</h4>
+                <p>Todas las operaciones registradas en esta plataforma cumplen con las regulaciones internacionales de aviación civil. Recuerde verificar las condiciones meteorológicas antes de validar asignaciones de pista.</p>
+            </div>
+            <div class="normativa-card">
+                <h4>Soporte a Controladores</h4>
+                <p>Canal prioritario habilitado para torres de control y personal de rampa. Ante cualquier discrepancia en el estado de vuelos, contacte con el Centro de Control de Área (ACC).</p>
+            </div>
+        </section>
+    
+        <!-- 6. Estado Técnico del Servidor -->
+        <div class="banner-sistema">
+            <div class="estado-indicador">
+                <span class="dot-verde"></span>
+                <span>Estado de la Red: <strong>Todos los sistemas operativos sin incidencias de red</strong></span>
+            </div>
+        </div>
+    
+    </main>
+
+
+
+    <!-- FOOTER  -->
+
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            
+            <!-- Columna 1 -->
+            <div class="columna-footer info-marca">
+                <div class="logo-footer">
+                    <span class="icono-aereo">✈</span>
+                    <h3>Control Aéreo</h3>
+                </div>
+                <p>Plataforma centralizada para la supervisión del espacio aéreo, coordinación de pistas y consulta meteorológica operativa en tiempo real.</p>
+            </div>
+    
+            <!-- Columna 2 -->
+            <div class="columna-footer">
+                <h4>Módulos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio / Dashboard</a></li>
+                    <li><a href="vuelos.html">Gestión de Vuelos</a></li>
+                    <li><a href="incidencias.html">Control de Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología METAR</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 3 -->
+            <div class="columna-footer">
+                <h4>Recursos Operativos</h4>
+                <ul>
+                    <li><a href="https://www.aena.es/" target="_blank" rel="noopener">Portal Oficial AENA</a></li>
+                    <li><a href="https://www.icao.int/" target="_blank" rel="noopener">Normativa ICAO</a></li>
+                    <li><a href="https://www.enaire.es/" target="_blank" rel="noopener">Información ENAIRE</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 4 -->
+            <div class="columna-footer">
+                <h4>Centro de Control</h4>
+                <p class="detalle-contacto"><strong>Teléfono Emergencias:</strong> +34 910 000 000</p>
+                <p class="detalle-contacto"><strong>Frecuencia VHF:</strong> 118.100 MHz</p>
+                <p class="detalle-contacto"><strong>Ubicación:</strong> Torre de Control Principal</p>
+            </div>
+    
+        </div>
+    
+        <!-- Barra Inferior-->
+        <div class="footer-bottom">
+            <div class="contenedor-bottom">
+                <p>&copy; 2026 Sistema de Gestión de Tráfico Aéreo. Todos los derechos reservados.</p>
+
+                <p>
+                    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                             src="https://jigsaw.w3.org/css-validator/images/vcss"
+                             alt="¡CSS Válido!">
+                    </a>
+                </p>
+
+                <div class="legales">
+                    <a href="#">Aviso Legal</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Accesibilidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

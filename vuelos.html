@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestión y monitorización de tráfico aéreo en tiempo real.">
+    <title>AeroControl - Gestión de Vuelos</title>
+    <link rel="icon" type="image/png" href="imagenes/icono.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- CABECERA IDÉNTICA AL INDEX -->
+
+    <header>
+        <div class="top-bar">
+            <nav class="menu-transparente">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="vuelos.html" class="active">Vuelos</a></li>
+                    <li><a href="incidencias.html">Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="cabecera-contenido">
+            <div class="bloque-titulo">
+                <img src="imagenes/icono.png" alt="AeroControl Logo" class="logo-titulo">
+                <h1 class="titulo-estrecho">AeroControl</h1>
+            </div>
+            <p>Gestiona el tráfico aéreo, consulta información en tiempo real y controla las operaciones desde nuestra plataforma web.</p>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- CONTENIDO DEL MÓDULO DE VUELOS -->
+    <main class="contenedor-principal">
+
+        <section class="seccion-portada">
+            <h2>Telemetría Aérea y Control de Sector</h2>
+            <hr class="titulo-separador">
+            <p class="subtitulo-portada">Monitorización ADS-B, vectores de separación en tiempo real y parámetros telemáticos de vuelo.</p>
+        </section>
+
+        <!-- BARRA SUPERIOR DE INDICADORES TELEMÁTRICOS -->
+        <div class="tarjeta-medidor">
+            <div class="etiqueta-medidor">
+                <span class="telemetria-label">CAPACIDAD SECTOR</span>
+                <div class="telemetria-valor">84%</div>
+                <div class="bar-progress"><div class="bar-fill" style="width: 84%;"></div></div>
+            </div>
+            <div class="etiqueta-medidor">
+                <span class="telemetria-label">SEPARACIÓN MEDIA</span>
+                <div class="telemetria-valor">7.2 NM</div>
+                <span class="telemetria-sub font-ok">✓ Norma ISO-ICAO</span>
+            </div>
+            <div class="etiqueta-medidor">
+                <span class="telemetria-label">TASA DE VECTORES</span>
+                <div class="telemetria-valor">14 / min</div>
+                <span class="telemetria-sub">Fluidez Óptima</span>
+            </div>
+            <div class="etiqueta-medidor">
+                <span class="telemetria-label">SISTEMA ADS-B</span>
+                <div class="telemetria-valor font-ok">99.9%</div>
+                <span class="telemetria-sub">32 Transceptores</span>
+            </div>
+        </div>
+
+            
+<div class="vuelos-grid">
+
+    <!-- COLUMNA IZQUIERDA: RADAR -->
+    <article class="info-card radar-card">
+        <!-- Cabecera con línea fina y estado -->
+        <div class="panel-header-radar">
+            <h3>Radar Primario</h3>
+            <span class="status-live-radar">• RASTREO ACTIVO</span>
+        </div>
+    
+        <!-- GIF del Radar -->
+        <div class="radar-contenedor">
+            <img src="imagenes/radar.gif" alt="Radar de tráfico aéreo animado" class="radar-gif">
+        </div>
+    </article>
+
+    <!-- COLUMNA DERECHA: PANEL LATERAL -->
+    <aside class="airspace-info">
+        
+        <!-- Ficha de Telemetría -->
+        <article class="info-card inspector-card">
+            <div class="card-header-telemetria">
+                <h4>Ficha de Telemetría</h4>
+                <span class="badge-live">SELECCIONADO: IBE3240</span>
+            </div>
+
+
+            <div class="plane-inspector-header">
+                <img src="imagenes/iberia.jpg" alt="IBE3240 Airbus A320" class="inspector-img">
+                <div class="inspector-details">
+                    <h5>IBE3240 (Iberia)</h5>
+                    <p>Airbus A320-214</p>
+                    <p class="ruta-texto">BIO ➔ MAD</p>
+                </div>
+            </div>
+
+            <div class="telemetria-grid-details">
+                <div class="tele-item">
+                    <span class="tele-titulo">Coordenadas:</span>
+                    <span class="tele-val">40.4168° N, 3.7038° W</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-titulo">Vel. Respecto al Suelo (GS):</span>
+                    <span class="tele-val">462 kts</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-titulo">Velocidad Mach:</span>
+                    <span class="tele-val">M 0.78</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-titulo">Tasa de Ascenso (VS):</span>
+                    <span class="tele-val font-ok">+0 ft/min (Nivelado)</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-titulo">Transpondedor Mode-S:</span>
+                    <span class="tele-val"><code>4B18A2</code> (Squawk 7321)</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-titulo">Aviso TCAS:</span>
+                    <span class="tele-val font-ok">Sin Conflictos</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Flujo de Tráfico -->
+        <article class="info-card">
+            <h4>Flujo de Tráfico del Sector</h4>
+            <ul class="lista-est">
+                <li><span>En Sobrevuelo (Crucero):</span> <strong>18</strong></li>
+                <li><span>En Aproximación / Descenso:</span> <strong>8</strong></li>
+                <li><span>En Salida / Ascenso:</span> <strong>6</strong></li>
+                <li><span>En Espera:</span> <strong class="text-warning">1</strong></li>
+            </ul>
+        </article>
+
+    </aside>
+
+</div>
+        <!-- Tabla de Control de Vuelos con Telemetría -->
+        <section class="contenedor-tabla-vuelos">
+            <div class="panel-header">
+                <h3>Plan de Vuelos, Telemetría y Vectores de Separación</h3>
+                
+            </div>
+
+            <table class="tabla-vuelos">
+                <thead>
+                    <tr>
+                        <th>Vista</th>
+                        <th>Callsign</th>
+                        <th>Squawk</th>
+                        <th>Aeronave</th>
+                        <th>Origen ➔ Destino</th>
+                        <th>Altitud (FL)</th>
+                        <th>Velocidad (GS)</th>
+                        <th>Mach</th>
+                        <th>Vert. Speed</th>
+                        <th>Fase</th>
+                        <th>Vectorización</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td class="celda-avion">
+                            <img src="imagenes/iberia.jpg" alt="A320" class="logo-aerolinea">
+                        </td>
+                        <td class="flight-code">IBE3240</td>
+                        <td><code>7321</code></td>
+                        <td>Airbus A320</td>
+                        <td>BIO ➔ MAD</td>
+                        <td>FL340</td>
+                        <td>450 kts</td>
+                        <td>M 0.78</td>
+                        <td><span class="fuente-correcto">0 ft/min</span></td>
+                        <td><span class="badge estado-crucero">Crucero</span></td>
+                        <td><button class="btn-accion">Ajustar Nivel</button></td>
+                    </tr>
+                    <tr>
+                        <td class="celda-avion">
+                            <img src="imagenes/ryan.jpg" alt="B737" class="logo-aerolinea">
+                        </td>
+                        <td class="flight-code">RYR8112</td>
+                        <td><code>2104</code></td>
+                        <td>Boeing 737-800</td>
+                        <td>BCN ➔ BIO</td>
+                        <td>FL120</td>
+                        <td>280 kts</td>
+                        <td>M 0.54</td>
+                        <td><span class="text-warning">-1200 ft/min</span></td>
+                        <td><span class="badge estado-descenso">Descenso</span></td>
+                        <td><button class="btn-accion">Ajustar Nivel</button></td>
+                    </tr>
+                    <tr>
+                        <td class="celda-avion">
+                            <img src="imagenes/vueling.jpg" alt="A321" class="logo-aerolinea">
+                        </td>
+                        <td class="flight-code">VLG2041</td>
+                        <td><code>4210</code></td>
+                        <td>Airbus A321</td>
+                        <td>BIO ➔ KEF</td>
+                        <td>FL280</td>
+                        <td>410 kts</td>
+                        <td>M 0.72</td>
+                        <td><span class="fuente-correcto">0 ft/min</span></td>
+                        <td><span class="badge estado-espera">En Espera</span></td>
+                        <td><button class="btn-accion">Autorizar Ruta</button></td>
+                    </tr>
+                    <tr>
+                        <td class="celda-avion">
+                            <img src="imagenes/aireuropa.jpg" alt="B787" class="logo-aerolinea">
+                        </td>
+                        <td class="flight-code">AEA1022</td>
+                        <td><code>1204</code></td>
+                        <td>Boeing 787-9</td>
+                        <td>HND ➔ BIO</td>
+                        <td>FL180</td>
+                        <td>320 kts</td>
+                        <td>M 0.62</td>
+                        <td><span class="text-warning">-1800 ft/min</span></td>
+                        <td><span class="badge estado-aprox">Aproximación</span></td>
+                        <td><button class="btn-accion">Asignar Vector</button></td>
+                    </tr>
+                    <tr>
+                        <td class="celda-avion">
+                            <img src="imagenes/airfrance.jpg" alt="A350" class="logo-aerolinea">
+                        </td>
+                        <td class="flight-code">AFR1430</td>
+                        <td><code>5512</code></td>
+                        <td>Airbus A350</td>
+                        <td>BIO ➔ SVQ</td>
+                        <td>FL100</td>
+                        <td>250 kts</td>
+                        <td>M 0.48</td>
+                        <td><span class="text-warning">-800 ft/min</span></td>
+                        <td><span class="badge estado-aprox">Aproximación</span></td>
+                        <td><button class="btn-accion">Asignar Vector</button></td>
+                    </tr>
+                </tbody>
+
+                <!-- Pie d tabla  -->
+                <tfoot>
+                    <tr>
+                        <td colspan="11">Total de vuelos monitorizados en tiempo real: <strong>5</strong>
+                        (<em>Actualizado en tiempo real</em>)
+                    </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER  -->
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            
+            <!-- Columna 1 -->
+            <div class="columna-footer info-marca">
+                <div class="logo-footer">
+                    <span class="icono-aereo">✈</span>
+                    <h3>Control Aéreo</h3>
+                </div>
+                <p>Plataforma centralizada para la supervisión del espacio aéreo, coordinación de pistas y consulta meteorológica operativa en tiempo real.</p>
+            </div>
+    
+            <!-- Columna 2 -->
+            <div class="columna-footer">
+                <h4>Módulos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio / Dashboard</a></li>
+                    <li><a href="vuelos.html">Gestión de Vuelos</a></li>
+                    <li><a href="incidencias.html">Control de Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología METAR</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 3 -->
+            <div class="columna-footer">
+                <h4>Recursos Operativos</h4>
+                <ul>
+                    <li><a href="https://www.aena.es/" target="_blank" rel="noopener">Portal Oficial AENA</a></li>
+                    <li><a href="https://www.icao.int/" target="_blank" rel="noopener">Normativa ICAO</a></li>
+                    <li><a href="https://www.enaire.es/" target="_blank" rel="noopener">Información ENAIRE</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 4 -->
+            <div class="columna-footer">
+                <h4>Centro de Control</h4>
+                <p class="detalle-contacto"><strong>Teléfono Emergencias:</strong> +34 910 000 000</p>
+                <p class="detalle-contacto"><strong>Frecuencia VHF:</strong> 118.100 MHz</p>
+                <p class="detalle-contacto"><strong>Ubicación:</strong> Torre de Control Principal</p>
+            </div>
+    
+        </div>
+    
+        <!-- Barra Inferior-->
+        <div class="footer-bottom">
+            <div class="contenedor-bottom">
+                <p>&copy; 2026 Sistema de Gestión de Tráfico Aéreo. Todos los derechos reservados.</p>
+
+                <p>
+                    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                             src="https://jigsaw.w3.org/css-validator/images/vcss"
+                             alt="¡CSS Válido!">
+                    </a>
+                </p>
+
+                <div class="legales">
+                    <a href="#">Aviso Legal</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Accesibilidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestión y monitorización de tráfico aéreo en tiempo real.">
+    <title>AeroControl - Panel e Incidencias</title>
+    <link rel="icon" type="image/png" href="imagenes/icono.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- CABECERA IDÉNTICA -->
+    <header>
+        <div class="top-bar">
+            <nav class="menu-transparente">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="vuelos.html">Vuelos</a></li>
+                    <li><a href="incidencias.html" class="active">Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="cabecera-contenido">
+            <div class="bloque-titulo">
+                <img src="imagenes/icono.png" alt="AeroControl Logo" class="logo-titulo">
+                <h1 class="titulo-estrecho">AeroControl</h1>
+            </div>
+            <p>Gestiona el tráfico aéreo, consulta información en tiempo real y controla las operaciones desde nuestra plataforma web.</p>
+        </div>
+    </header>
+
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal">
+
+        <section class="seccion-portada">
+            <h2>Centro de Control y Gestión de Incidencias</h2>
+            <hr class="titulo-separador">
+            <p class="subtitulo-portada">Supervisión en tiempo real de alertas operativas y registro de nuevos eventos.</p>
+        </section>
+
+        <!-- BLOQUE 1: LISTADO DE INCIDENCIAS ACTIVAS EN TIEMPO REAL -->
+        <section class="panel-incidencias-activas">
+            <div class="cabecera-bloque">
+                <h3>Incidencias Activas en el Espacio Aéreo</h3>
+                <span class="indicador-en-vivo">● EN VIVO</span>
+            </div>
+
+            <table class="tabla-incidencias">
+                <thead>
+                    <tr>
+                        <th>ID Alerta</th>
+                        <th>Hora (UTC)</th>
+                        <th>Sector / Pista</th>
+                        <th>Categoría</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="fila-alerta-alta">
+                        <td><strong>#INC-8092</strong></td>
+                        <td>14:02</td>
+                        <td>LEMD / Pista 32R</td>
+                        <td>Viento</td>
+                        <td><span class="badge prioridad-alta">Alta</span></td>
+                        <td><span class="badge estado-en-curso">En Gestión</span></td>
+                    </tr>
+                    <tr class="fila-alerta-media">
+                        <td><strong>#INC-8089</strong></td>
+                        <td>13:45</td>
+                        <td>LECM_S (Madrid Sur)</td>
+                        <td>Fallo Transpondedor</td>
+                        <td><span class="badge prioridad-media">Media</span></td>
+                        <td><span class="badge estado-atencion">En Seguimiento</span></td>
+                    </tr>
+                    <tr class="fila-alerta-baja">
+                        <td><strong>#INC-8081</strong></td>
+                        <td>12:10</td>
+                        <td>LECB_APP (Barcelona)</td>
+                        <td>Fallo Sistema Radar Secundario</td>
+                        <td><span class="badge prioridad-baja">Baja</span></td>
+                        <td><span class="badge estado-resuelto">Resuelto</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- BLOQUE 2: FORMULARIO DE REGISTRO DE NUEVA INCIDENCIA -->
+<section class="formulario-container">
+    <div class="cabecera-bloque">
+        <h3>Reportar Nueva Incidencia Operativa</h3>
+    </div>
+
+    
+    <form name="incidencias-operativas" method="POST" data-netlify="true" class="form-incidencias">
+        
+        <!-- DATOS DEL OPERADOR -->
+        <fieldset>
+            <legend>Datos del Operador de Control</legend>
+
+            <p>
+                <label for="id-controlador">Identificador de Controlador / Licencia:</label>
+                
+                <input type="text" id="id-controlador" name="id_controlador" placeholder="Ej. ATC-8492" required autofocus>
+            </p>
+
+            <p>
+                <label for="email-controlador">Correo Electrónico:</label>
+                <input type="email" id="email-controlador" name="email_controlador" placeholder="controlador@aerocontrol.es" required>
+            </p>
+
+            <p>
+                <label for="sector-trabajo">Sector Aéreo de Control:</label>
+                <select id="sector-trabajo" name="sector_trabajo" required>
+                    <option value="" disabled selected>Seleccione un sector...</option>
+                    <optgroup label="Sectores de Ruta (ACC)">
+                        <option value="LECM_N">Madrid Centro Norte (LECM_N)</option>
+                        <option value="LECM_S">Madrid Centro Sur (LECM_S)</option>
+                        <option value="LECB_E">Barcelona Este (LECB_E)</option>
+                    </optgroup>
+                    <optgroup label="Sectores de Aproximación (TMA)">
+                        <option value="LEMD_APP">Aproximación Barajas (LEMD_APP)</option>
+                        <option value="LEBL_APP">Aproximación El Prat (LEBL_APP)</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+
+        <!-- DETALLES DE LA INCIDENCIA -->
+        <fieldset>
+            <legend>Parámetros y Detalles del Evento</legend>
+
+            <p>
+                <label for="tipo-incidencia">Categoría del Evento:</label>
+                <select id="tipo-incidencia" name="tipo_incidencia" required>
+                    <option value="" disabled selected>Seleccione categoría...</option>
+                    <option value="separacion">Pérdida de Separación Mínima</option>
+                    <option value="telemetria">Fallo en Sistema ADS-B / Transpondedor</option>
+                    <option value="pista">Incursión en Pista</option>
+                    <option value="emergencia">Declaración de Emergencia (Mayday)</option>
+                    <option value="meteorologia">Turbulencia Severa</option>
+                </select>
+            </p>
+
+            <div>
+                <label>Nivel de Prioridad:</label>
+                <ul class="lista-opciones-inline">
+                    <li>
+                        <label for="prio-baja">
+                            <input type="radio" id="prio-baja" name="prioridad" value="baja"> Baja
+                        </label>
+                    </li>
+                    <li>
+                        <label for="prio-media">
+                            <input type="radio" id="prio-media" name="prioridad" value="media" checked> Media
+                        </label>
+                    </li>
+                    <li>
+                        <label for="prio-alta">
+                            <input type="radio" id="prio-alta" name="prioridad" value="alta"> Alta / Urgente
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                <label for="flight-callsign">Aeronave Involucrada (Squawk):</label>
+                <input type="text" id="flight-callsign" name="flight_callsign" placeholder="Ej. IBE3240 / Squawk 7321">
+            </p>
+
+            <p>
+                <label for="fecha-hora">Fecha y Hora del Suceso:</label>
+                <input type="datetime-local" id="fecha-hora" name="fecha_hora" required>
+            </p>
+
+            <p>
+                <label for="descripcion-incidencia">Descripción detallada del incidente:</label>
+                
+                <textarea id="descripcion-incidencia" name="descripcion" rows="5" cols="50" minlength="20" placeholder="Detalle datos telemáticos, altitud (FL) y vectores asignados..." required></textarea>
+            </p>
+        </fieldset>
+
+        <!-- PROTOCOLOS -->
+        <fieldset>
+            <legend>Protocolos de Seguridad</legend>
+            <p>
+                <label for="notificar-aesa">
+                    <input type="checkbox" id="notificar-aesa" name="notificar_aesa" value="si" checked> Notificar automáticamente a AESA
+                </label>
+            </p>
+            <p>
+                <label for="confirmacion-terminos">
+                    <input type="checkbox" id="confirmacion-terminos" name="confirmacion_terminos" value="aceptado" required> Doy mi consentimiento para el tratamiento de mis datos personales.
+                </label>
+            </p>
+        </fieldset>
+
+        <div class="form-acciones">
+            <input type="submit" value="Enviar Reporte" class="btn-submit">
+            <input type="reset" value="Limpiar" class="btn-reset">
+        </div>
+
+    </form>
+</section>
+
+    </main>
+
+
+
+
+
+    <!-- FOOTER IDÉNTICO -->
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <div class="columna-footer info-marca">
+                <div class="logo-footer">
+                    <span class="icono-aereo">✈</span>
+                    <h3>Control Aéreo</h3>
+                </div>
+                <p>Plataforma centralizada para la supervisión del espacio aéreo, coordinación de pistas y consulta meteorológica operativa en tiempo real.</p>
+            </div>
+    
+            <div class="columna-footer">
+                <h4>Módulos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio / Dashboard</a></li>
+                    <li><a href="vuelos.html">Gestión de Vuelos</a></li>
+                    <li><a href="incidencias.html">Control de Incidencias</a></li>
+                    <li><a href="meteorologia.html">Meteorología METAR</a></li>
+                </ul>
+            </div>
+    
+            <div class="columna-footer">
+                <h4>Recursos Operativos</h4>
+                <ul>
+                    <li><a href="https://www.aena.es/" target="_blank" rel="noopener">Portal Oficial AENA</a></li>
+                    <li><a href="https://www.icao.int/" target="_blank" rel="noopener">Normativa ICAO</a></li>
+                    <li><a href="https://www.enaire.es/" target="_blank" rel="noopener">Información ENAIRE</a></li>
+                </ul>
+            </div>
+    
+            <div class="columna-footer">
+                <h4>Centro de Control</h4>
+                <p class="detalle-contacto"><strong>Teléfono Emergencias:</strong> +34 910 000 000</p>
+                <p class="detalle-contacto"><strong>Frecuencia VHF:</strong> 118.100 MHz</p>
+                <p class="detalle-contacto"><strong>Ubicación:</strong> Torre de Control Principal</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="contenedor-bottom">
+                <p>&copy; 2026 Sistema de Gestión de Tráfico Aéreo. Todos los derechos reservados.</p>
+
+                <p>
+                    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                             src="https://jigsaw.w3.org/css-validator/images/vcss"
+                             alt="¡CSS Válido!">
+                    </a>
+                </p>
+
+                <div class="legales">
+                    <a href="#">Aviso Legal</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Accesibilidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
